@@ -197,7 +197,7 @@ For other databases, these steps may be skipped.
     ```console
     sudo docker run \
       --interactive \
-      --name senzing-jupyter \
+      --name test-senzing-jupyter \
       --publish ${WEBAPP_PORT}:8888 \
       --rm \
       --tty \
