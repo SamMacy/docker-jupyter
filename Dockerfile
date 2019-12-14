@@ -90,6 +90,14 @@ RUN conda run -n ipykernel_py2 jupyter labextension install qgrid
 
 RUN conda run -n ipykernel_py2 python -m ipykernel install --user
 
+# Install nbextensions
+RUN pip3 install \
+      jupyter_contrib_nbextensions \
+      https://github.com/ipython-contrib/jupyter_contrib_nbextensions/tarball/master
+RUN jupyter contrib nbextension install --user
+RUN pip3 install jupyter_nbextensions_configurator
+RUN jupyter nbextensions_configurator enable --user
+
 # Update nodeJS.
 
 RUN npm i -g npm
